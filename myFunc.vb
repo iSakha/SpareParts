@@ -12,7 +12,7 @@ Module myFunc
         Dim lastRunDate As Date = My.Settings.lastRun
         Dim daysStayed As Int32 = My.Settings.expireDate.Subtract(currentDate).Days
 
-        mainForm.menuItem_department.Enabled = False
+        mainForm.menuItem_manufactor.Enabled = False
         mainForm.menuItem_company.Enabled = False
 
         If lastRunDate.Subtract(currentDate).Days > 0 Then
@@ -107,40 +107,73 @@ Module myFunc
                 dt.Columns(7).DataType = System.Type.GetType("System.Boolean")               ' MultiFixture
                 dt.Columns(8).DataType = System.Type.GetType("System.String")                ' Notes
 
-                For i = 1 To r_xlTable - 1
+            Case = "Fixtures"
 
-                    row = dt.Rows.Add()
-
-                    For j = 0 To c_xlTable - 1
-
-                        row.Item(j) = rng.Value(i, j)
-
-                    Next j
-                Next i
-
+                dt.Columns(0).DataType = System.Type.GetType("System.Int32")                 ' id
+                dt.Columns(1).DataType = System.Type.GetType("System.String")                ' Fixtures
+                dt.Columns(2).DataType = System.Type.GetType("System.String")                ' Manufactor
+                dt.Columns(3).DataType = System.Type.GetType("System.String")                ' Type
 
             Case Else
 
                 dt.Columns(0).DataType = System.Type.GetType("System.Int32")                 ' id
-                dt.Columns(1).DataType = System.Type.GetType("System.String")                ' Type/Location/Manufactor/Fixtures
-
-                For i = 1 To r_xlTable - 1
-
-                    row = dt.Rows.Add()
-
-                    For j = 0 To 1
-
-                        row.Item(j) = rng.Value(i, j)
-
-                    Next j
-                Next i
+                dt.Columns(1).DataType = System.Type.GetType("System.String")                ' Type/Location/Manufactor
 
         End Select
 
+        For i = 1 To r_xlTable - 1
 
+            row = dt.Rows.Add()
+
+            For j = 0 To c_xlTable - 1
+
+                row.Item(j) = rng.Value(i, j)
+
+            Next j
+        Next i
 
         Return dt
 
     End Function
+
+    '===================================================================================
+    '             === Fill datagridview ===
+    '===================================================================================
+
+    Function fillDGV(_expression As String, _dt As DataTable, _columnName As String)
+
+        Dim filterTable As DataTable
+        Dim foundRows() As DataRow
+        Dim expression As String
+
+        expression = _columnName & " = " & " '" & _expression & "'"
+
+        filterTable = _dt.Copy
+        filterTable.Clear()
+
+        foundRows = _dt.Select(expression)
+
+        For i As Integer = 0 To foundRows.GetUpperBound(0)
+            filterTable.ImportRow(foundRows(i))
+        Next i
+
+        Return filterTable
+
+    End Function
+    '===================================================================================
+    '             === Format DGV_fxt ===
+    '===================================================================================
+    Sub formatDGV_fxt(_case As Integer)
+        mainForm.DGV_fxt.Columns(2).Visible = False
+        mainForm.DGV_fxt.Columns(3).Visible = False
+        mainForm.DGV_fxt.Columns(0).Width = 40
+        mainForm.DGV_fxt.RowHeadersVisible = False
+        Select Case _case
+            Case = 1
+                mainForm.DGV_fxt.Columns(1).Width = 130
+            Case = 2
+                mainForm.DGV_fxt.Columns(1).Width = 147
+        End Select
+    End Sub
 
 End Module

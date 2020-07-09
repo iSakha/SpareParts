@@ -55,22 +55,22 @@ Partial Class mainForm
         Me.SearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.toolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menuItem_department = New System.Windows.Forms.ToolStripMenuItem()
-        Me.item_lighting = New System.Windows.Forms.ToolStripMenuItem()
-        Me.item_movHeads = New System.Windows.Forms.ToolStripMenuItem()
-        Me.item_strobes = New System.Windows.Forms.ToolStripMenuItem()
-        Me.item_screen = New System.Windows.Forms.ToolStripMenuItem()
-        Me.item_modules = New System.Windows.Forms.ToolStripMenuItem()
-        Me.item_servers = New System.Windows.Forms.ToolStripMenuItem()
-        Me.item_commutation = New System.Windows.Forms.ToolStripMenuItem()
-        Me.item_pwrdistr = New System.Windows.Forms.ToolStripMenuItem()
-        Me.item_comm = New System.Windows.Forms.ToolStripMenuItem()
-        Me.item_truss_and_motors = New System.Windows.Forms.ToolStripMenuItem()
-        Me.item_construction = New System.Windows.Forms.ToolStripMenuItem()
-        Me.item_sound = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MALightingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LDRToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ShowtecToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuItem_manufactor = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_claypaky = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_lamp_cp = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_led_cp = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_pr = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_lamp_pr = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_led_pr = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_lightsky = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_lamp_ls = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_led_ls = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_martin = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_studiodue = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_antari = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_malighting = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_ldr = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_showtec = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuItem_company = New System.Windows.Forms.ToolStripMenuItem()
         Me.item_belimlight = New System.Windows.Forms.ToolStripMenuItem()
         Me.item_PRLighting = New System.Windows.Forms.ToolStripMenuItem()
@@ -83,6 +83,7 @@ Partial Class mainForm
         Me.DGV_fxt = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DGV_spare = New System.Windows.Forms.DataGridView()
+        Me.item_all_fxt = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DGV_fxt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -91,7 +92,7 @@ Partial Class mainForm
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.HelpToolStripMenuItem, Me.menuItem_department, Me.menuItem_company})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.HelpToolStripMenuItem, Me.menuItem_manufactor, Me.menuItem_company})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
@@ -292,105 +293,105 @@ Partial Class mainForm
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.AboutToolStripMenuItem.Text = "&About..."
         '
-        'menuItem_department
+        'menuItem_manufactor
         '
-        Me.menuItem_department.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_lighting, Me.item_screen, Me.item_commutation, Me.item_truss_and_motors, Me.item_construction, Me.item_sound, Me.MALightingToolStripMenuItem, Me.LDRToolStripMenuItem, Me.ShowtecToolStripMenuItem})
-        Me.menuItem_department.Name = "menuItem_department"
-        Me.menuItem_department.Size = New System.Drawing.Size(81, 20)
-        Me.menuItem_department.Text = "Manufactor"
+        Me.menuItem_manufactor.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_claypaky, Me.item_pr, Me.item_lightsky, Me.item_martin, Me.item_studiodue, Me.item_antari, Me.item_malighting, Me.item_ldr, Me.item_showtec, Me.item_all_fxt})
+        Me.menuItem_manufactor.Name = "menuItem_manufactor"
+        Me.menuItem_manufactor.Size = New System.Drawing.Size(81, 20)
+        Me.menuItem_manufactor.Text = "Manufactor"
         '
-        'item_lighting
+        'item_claypaky
         '
-        Me.item_lighting.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_movHeads, Me.item_strobes})
-        Me.item_lighting.Name = "item_lighting"
-        Me.item_lighting.Size = New System.Drawing.Size(180, 22)
-        Me.item_lighting.Text = "&ClayPaky"
+        Me.item_claypaky.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_lamp_cp, Me.item_led_cp})
+        Me.item_claypaky.Name = "item_claypaky"
+        Me.item_claypaky.Size = New System.Drawing.Size(180, 22)
+        Me.item_claypaky.Text = "&ClayPaky"
         '
-        'item_movHeads
+        'item_lamp_cp
         '
-        Me.item_movHeads.Name = "item_movHeads"
-        Me.item_movHeads.Size = New System.Drawing.Size(180, 22)
-        Me.item_movHeads.Text = "&Lamp"
+        Me.item_lamp_cp.Name = "item_lamp_cp"
+        Me.item_lamp_cp.Size = New System.Drawing.Size(104, 22)
+        Me.item_lamp_cp.Text = "&Lamp"
         '
-        'item_strobes
+        'item_led_cp
         '
-        Me.item_strobes.Name = "item_strobes"
-        Me.item_strobes.Size = New System.Drawing.Size(180, 22)
-        Me.item_strobes.Text = "&LED"
+        Me.item_led_cp.Name = "item_led_cp"
+        Me.item_led_cp.Size = New System.Drawing.Size(104, 22)
+        Me.item_led_cp.Text = "&LED"
         '
-        'item_screen
+        'item_pr
         '
-        Me.item_screen.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_modules, Me.item_servers})
-        Me.item_screen.Name = "item_screen"
-        Me.item_screen.Size = New System.Drawing.Size(180, 22)
-        Me.item_screen.Text = "&PR Lighting"
+        Me.item_pr.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_lamp_pr, Me.item_led_pr})
+        Me.item_pr.Name = "item_pr"
+        Me.item_pr.Size = New System.Drawing.Size(180, 22)
+        Me.item_pr.Text = "&PR Lighting"
         '
-        'item_modules
+        'item_lamp_pr
         '
-        Me.item_modules.Name = "item_modules"
-        Me.item_modules.Size = New System.Drawing.Size(104, 22)
-        Me.item_modules.Text = "&Lamp"
+        Me.item_lamp_pr.Name = "item_lamp_pr"
+        Me.item_lamp_pr.Size = New System.Drawing.Size(104, 22)
+        Me.item_lamp_pr.Text = "&Lamp"
         '
-        'item_servers
+        'item_led_pr
         '
-        Me.item_servers.Name = "item_servers"
-        Me.item_servers.Size = New System.Drawing.Size(104, 22)
-        Me.item_servers.Text = "&LED"
+        Me.item_led_pr.Name = "item_led_pr"
+        Me.item_led_pr.Size = New System.Drawing.Size(104, 22)
+        Me.item_led_pr.Text = "&LED"
         '
-        'item_commutation
+        'item_lightsky
         '
-        Me.item_commutation.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_pwrdistr, Me.item_comm})
-        Me.item_commutation.Name = "item_commutation"
-        Me.item_commutation.Size = New System.Drawing.Size(180, 22)
-        Me.item_commutation.Text = "&LightSky"
+        Me.item_lightsky.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_lamp_ls, Me.item_led_ls})
+        Me.item_lightsky.Name = "item_lightsky"
+        Me.item_lightsky.Size = New System.Drawing.Size(180, 22)
+        Me.item_lightsky.Text = "&LightSky"
         '
-        'item_pwrdistr
+        'item_lamp_ls
         '
-        Me.item_pwrdistr.Name = "item_pwrdistr"
-        Me.item_pwrdistr.Size = New System.Drawing.Size(104, 22)
-        Me.item_pwrdistr.Text = "&Lamp"
+        Me.item_lamp_ls.Name = "item_lamp_ls"
+        Me.item_lamp_ls.Size = New System.Drawing.Size(104, 22)
+        Me.item_lamp_ls.Text = "&Lamp"
         '
-        'item_comm
+        'item_led_ls
         '
-        Me.item_comm.Name = "item_comm"
-        Me.item_comm.Size = New System.Drawing.Size(104, 22)
-        Me.item_comm.Text = "&LED"
+        Me.item_led_ls.Name = "item_led_ls"
+        Me.item_led_ls.Size = New System.Drawing.Size(104, 22)
+        Me.item_led_ls.Text = "&LED"
         '
-        'item_truss_and_motors
+        'item_martin
         '
-        Me.item_truss_and_motors.Name = "item_truss_and_motors"
-        Me.item_truss_and_motors.Size = New System.Drawing.Size(180, 22)
-        Me.item_truss_and_motors.Text = "&Martin"
+        Me.item_martin.Name = "item_martin"
+        Me.item_martin.Size = New System.Drawing.Size(180, 22)
+        Me.item_martin.Text = "&Martin"
         '
-        'item_construction
+        'item_studiodue
         '
-        Me.item_construction.Name = "item_construction"
-        Me.item_construction.Size = New System.Drawing.Size(180, 22)
-        Me.item_construction.Text = "&StudioDue"
+        Me.item_studiodue.Name = "item_studiodue"
+        Me.item_studiodue.Size = New System.Drawing.Size(180, 22)
+        Me.item_studiodue.Text = "&StudioDue"
         '
-        'item_sound
+        'item_antari
         '
-        Me.item_sound.Name = "item_sound"
-        Me.item_sound.Size = New System.Drawing.Size(180, 22)
-        Me.item_sound.Text = "&Antari"
+        Me.item_antari.Name = "item_antari"
+        Me.item_antari.Size = New System.Drawing.Size(180, 22)
+        Me.item_antari.Text = "&Antari"
         '
-        'MALightingToolStripMenuItem
+        'item_malighting
         '
-        Me.MALightingToolStripMenuItem.Name = "MALightingToolStripMenuItem"
-        Me.MALightingToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.MALightingToolStripMenuItem.Text = "&MALighting"
+        Me.item_malighting.Name = "item_malighting"
+        Me.item_malighting.Size = New System.Drawing.Size(180, 22)
+        Me.item_malighting.Text = "&MALighting"
         '
-        'LDRToolStripMenuItem
+        'item_ldr
         '
-        Me.LDRToolStripMenuItem.Name = "LDRToolStripMenuItem"
-        Me.LDRToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.LDRToolStripMenuItem.Text = "&LDR"
+        Me.item_ldr.Name = "item_ldr"
+        Me.item_ldr.Size = New System.Drawing.Size(180, 22)
+        Me.item_ldr.Text = "&LDR"
         '
-        'ShowtecToolStripMenuItem
+        'item_showtec
         '
-        Me.ShowtecToolStripMenuItem.Name = "ShowtecToolStripMenuItem"
-        Me.ShowtecToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ShowtecToolStripMenuItem.Text = "&Showtec"
+        Me.item_showtec.Name = "item_showtec"
+        Me.item_showtec.Size = New System.Drawing.Size(180, 22)
+        Me.item_showtec.Text = "&Showtec"
         '
         'menuItem_company
         '
@@ -402,43 +403,43 @@ Partial Class mainForm
         'item_belimlight
         '
         Me.item_belimlight.Name = "item_belimlight"
-        Me.item_belimlight.Size = New System.Drawing.Size(180, 22)
+        Me.item_belimlight.Size = New System.Drawing.Size(176, 22)
         Me.item_belimlight.Text = "&Power,high voltage"
         '
         'item_PRLighting
         '
         Me.item_PRLighting.Name = "item_PRLighting"
-        Me.item_PRLighting.Size = New System.Drawing.Size(180, 22)
+        Me.item_PRLighting.Size = New System.Drawing.Size(176, 22)
         Me.item_PRLighting.Text = "&Electronics"
         '
         'item_blackout
         '
         Me.item_blackout.Name = "item_blackout"
-        Me.item_blackout.Size = New System.Drawing.Size(180, 22)
+        Me.item_blackout.Size = New System.Drawing.Size(176, 22)
         Me.item_blackout.Text = "&Optics"
         '
         'item_vision
         '
         Me.item_vision.Name = "item_vision"
-        Me.item_vision.Size = New System.Drawing.Size(180, 22)
+        Me.item_vision.Size = New System.Drawing.Size(176, 22)
         Me.item_vision.Text = "&Plastic"
         '
         'item_stage
         '
         Me.item_stage.Name = "item_stage"
-        Me.item_stage.Size = New System.Drawing.Size(180, 22)
+        Me.item_stage.Size = New System.Drawing.Size(176, 22)
         Me.item_stage.Text = "&Mechanics"
         '
         'item_summary
         '
         Me.item_summary.Name = "item_summary"
-        Me.item_summary.Size = New System.Drawing.Size(180, 22)
+        Me.item_summary.Size = New System.Drawing.Size(176, 22)
         Me.item_summary.Text = "&Fans"
         '
         'OthersToolStripMenuItem
         '
         Me.OthersToolStripMenuItem.Name = "OthersToolStripMenuItem"
-        Me.OthersToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OthersToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.OthersToolStripMenuItem.Text = "&Others"
         '
         'DGV_fxt
@@ -469,6 +470,12 @@ Partial Class mainForm
         Me.DGV_spare.Name = "DGV_spare"
         Me.DGV_spare.Size = New System.Drawing.Size(558, 402)
         Me.DGV_spare.TabIndex = 11
+        '
+        'item_all_fxt
+        '
+        Me.item_all_fxt.Name = "item_all_fxt"
+        Me.item_all_fxt.Size = New System.Drawing.Size(180, 22)
+        Me.item_all_fxt.Text = "ALL fixtures"
         '
         'mainForm
         '
@@ -519,22 +526,22 @@ Partial Class mainForm
     Friend WithEvents SearchToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents toolStripSeparator5 As ToolStripSeparator
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents menuItem_department As ToolStripMenuItem
-    Friend WithEvents item_lighting As ToolStripMenuItem
-    Friend WithEvents item_movHeads As ToolStripMenuItem
-    Friend WithEvents item_strobes As ToolStripMenuItem
-    Friend WithEvents item_screen As ToolStripMenuItem
-    Friend WithEvents item_modules As ToolStripMenuItem
-    Friend WithEvents item_servers As ToolStripMenuItem
-    Friend WithEvents item_commutation As ToolStripMenuItem
-    Friend WithEvents item_pwrdistr As ToolStripMenuItem
-    Friend WithEvents item_comm As ToolStripMenuItem
-    Friend WithEvents item_truss_and_motors As ToolStripMenuItem
-    Friend WithEvents item_construction As ToolStripMenuItem
-    Friend WithEvents item_sound As ToolStripMenuItem
-    Friend WithEvents MALightingToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LDRToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ShowtecToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents menuItem_manufactor As ToolStripMenuItem
+    Friend WithEvents item_claypaky As ToolStripMenuItem
+    Friend WithEvents item_lamp_cp As ToolStripMenuItem
+    Friend WithEvents item_led_cp As ToolStripMenuItem
+    Friend WithEvents item_pr As ToolStripMenuItem
+    Friend WithEvents item_lamp_pr As ToolStripMenuItem
+    Friend WithEvents item_led_pr As ToolStripMenuItem
+    Friend WithEvents item_lightsky As ToolStripMenuItem
+    Friend WithEvents item_lamp_ls As ToolStripMenuItem
+    Friend WithEvents item_led_ls As ToolStripMenuItem
+    Friend WithEvents item_martin As ToolStripMenuItem
+    Friend WithEvents item_studiodue As ToolStripMenuItem
+    Friend WithEvents item_antari As ToolStripMenuItem
+    Friend WithEvents item_malighting As ToolStripMenuItem
+    Friend WithEvents item_ldr As ToolStripMenuItem
+    Friend WithEvents item_showtec As ToolStripMenuItem
     Friend WithEvents menuItem_company As ToolStripMenuItem
     Friend WithEvents item_belimlight As ToolStripMenuItem
     Friend WithEvents item_PRLighting As ToolStripMenuItem
@@ -547,4 +554,5 @@ Partial Class mainForm
     Friend WithEvents DGV_fxt As DataGridView
     Friend WithEvents Panel1 As Panel
     Friend WithEvents DGV_spare As DataGridView
+    Friend WithEvents item_all_fxt As ToolStripMenuItem
 End Class
