@@ -47,13 +47,15 @@ Module myFunc
             Exit Sub
         End If
 
-        ' mainForm.dt_SpareParts = loadDatatables("Spare", "SpareParts")
+        mainForm.dt_Action = loadDatatables("Action", "Action")
+        mainForm.dt_SpareParts = loadDatatables("Spare", "SpareParts")
         mainForm.dt_Fixtures = loadDatatables("Fixtures", "Fixtures")
-        'mainForm.dt_SpareTypes = loadDatatables("Spare", "SpareTypes")
-        'mainForm.dt_Location = loadDatatables("Spare", "Location")
-        'mainForm.dt_Manufactors = loadDatatables("Fixtures", "Manufactors")
+        mainForm.dt_SpareTypes = loadDatatables("Spare", "SpareTypes")
+        mainForm.dt_Location = loadDatatables("Spare", "Location")
+        mainForm.dt_Manufactors = loadDatatables("Fixtures", "Manufactors")
+        mainForm.dt_Personnel = loadDatatables("Fixtures", "Personnel")
 
-        'mainForm.DGV.DataSource = mainForm.dt_Manufactors
+        mainForm.DGV_spare.DataSource = mainForm.dt_SpareParts
     End Sub
 
     '===================================================================================
@@ -95,6 +97,22 @@ Module myFunc
 
         Select Case _tableName
 
+            Case = "Action"
+
+                dt.Columns(0).DataType = System.Type.GetType("System.Int32")                 ' id_action
+                dt.Columns(1).DataType = System.Type.GetType("System.DateTime")              ' Date
+                dt.Columns(2).DataType = System.Type.GetType("System.String")                ' Action
+                dt.Columns(3).DataType = System.Type.GetType("System.String")                ' Type
+                dt.Columns(4).DataType = System.Type.GetType("System.String")                ' Name
+                dt.Columns(5).DataType = System.Type.GetType("System.String")                ' PartName
+                dt.Columns(6).DataType = System.Type.GetType("System.String")                ' PartNumber
+                dt.Columns(7).DataType = System.Type.GetType("System.String")                ' Fixture
+                dt.Columns(8).DataType = System.Type.GetType("System.String")                ' Manufactor
+                dt.Columns(8).DataType = System.Type.GetType("System.Int32")                 ' Qty
+                dt.Columns(8).DataType = System.Type.GetType("System.Boolean")               ' MultiFixture
+                dt.Columns(8).DataType = System.Type.GetType("System.String")                ' Notes
+                dt.Columns(8).DataType = System.Type.GetType("System.String")                ' Pers
+
             Case = "SpareParts"
 
                 dt.Columns(0).DataType = System.Type.GetType("System.Int32")                 ' id_spare
@@ -104,8 +122,11 @@ Module myFunc
                 dt.Columns(4).DataType = System.Type.GetType("System.String")                ' PartNumber
                 dt.Columns(5).DataType = System.Type.GetType("System.String")                ' Fixture
                 dt.Columns(6).DataType = System.Type.GetType("System.String")                ' Manufactor
-                dt.Columns(7).DataType = System.Type.GetType("System.Boolean")               ' MultiFixture
+                dt.Columns(7).DataType = System.Type.GetType("System.String")                ' FixtureType
+                dt.Columns(8).DataType = System.Type.GetType("System.Boolean")               ' MultiFixture
+                dt.Columns(8).DataType = System.Type.GetType("System.Int32")                 ' Qty
                 dt.Columns(8).DataType = System.Type.GetType("System.String")                ' Notes
+
 
             Case = "Fixtures"
 
@@ -126,9 +147,11 @@ Module myFunc
             row = dt.Rows.Add()
 
             For j = 0 To c_xlTable - 1
-
+                'If (j = 1) Then
+                'row.Item(j) = Date.FromOADate(rng.Value(i, j))
+                'Else
                 row.Item(j) = rng.Value(i, j)
-
+                'End If
             Next j
         Next i
 
@@ -174,6 +197,23 @@ Module myFunc
             Case = 2
                 mainForm.DGV_fxt.Columns(1).Width = 147
         End Select
+    End Sub
+
+    '===================================================================================
+    '             === Write to label ===
+    '===================================================================================
+
+    Sub writeToLabel(_lbl As String)
+        mainForm.lbl_manufactor.Text = _lbl
+    End Sub
+
+    '===================================================================================
+    '             === CellClick on DGV ===
+    '===================================================================================
+    Sub dgv_clickCell(_sender As Object, _e As DataGridViewCellEventArgs)
+        Dim index As Integer
+        index = _e.RowIndex
+        mainForm.lbl_fxt.Text = mainForm.DGV_fxt.Rows(index).Cells(1).Value
     End Sub
 
 End Module

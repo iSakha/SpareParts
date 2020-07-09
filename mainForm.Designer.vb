@@ -84,6 +84,8 @@ Partial Class mainForm
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DGV_spare = New System.Windows.Forms.DataGridView()
         Me.item_all_fxt = New System.Windows.Forms.ToolStripMenuItem()
+        Me.lbl_manufactor = New System.Windows.Forms.Label()
+        Me.lbl_fxt = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DGV_fxt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -454,9 +456,11 @@ Partial Class mainForm
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.lbl_fxt)
+        Me.Panel1.Controls.Add(Me.lbl_manufactor)
         Me.Panel1.Controls.Add(Me.DGV_spare)
         Me.Panel1.Controls.Add(Me.DGV_fxt)
-        Me.Panel1.Location = New System.Drawing.Point(12, 48)
+        Me.Panel1.Location = New System.Drawing.Point(12, 36)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(776, 473)
         Me.Panel1.TabIndex = 11
@@ -477,6 +481,30 @@ Partial Class mainForm
         Me.item_all_fxt.Size = New System.Drawing.Size(180, 22)
         Me.item_all_fxt.Text = "ALL fixtures"
         '
+        'lbl_manufactor
+        '
+        Me.lbl_manufactor.AutoSize = True
+        Me.lbl_manufactor.BackColor = System.Drawing.Color.NavajoWhite
+        Me.lbl_manufactor.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbl_manufactor.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lbl_manufactor.Location = New System.Drawing.Point(19, 14)
+        Me.lbl_manufactor.Name = "lbl_manufactor"
+        Me.lbl_manufactor.Size = New System.Drawing.Size(55, 19)
+        Me.lbl_manufactor.TabIndex = 12
+        Me.lbl_manufactor.Text = "Label1"
+        '
+        'lbl_fxt
+        '
+        Me.lbl_fxt.AutoSize = True
+        Me.lbl_fxt.BackColor = System.Drawing.Color.NavajoWhite
+        Me.lbl_fxt.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbl_fxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lbl_fxt.Location = New System.Drawing.Point(211, 14)
+        Me.lbl_fxt.Name = "lbl_fxt"
+        Me.lbl_fxt.Size = New System.Drawing.Size(55, 19)
+        Me.lbl_fxt.TabIndex = 13
+        Me.lbl_fxt.Text = "Label1"
+        '
         'mainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -490,6 +518,7 @@ Partial Class mainForm
         Me.MenuStrip1.PerformLayout()
         CType(Me.DGV_fxt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.DGV_spare, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -555,4 +584,6 @@ Partial Class mainForm
     Friend WithEvents Panel1 As Panel
     Friend WithEvents DGV_spare As DataGridView
     Friend WithEvents item_all_fxt As ToolStripMenuItem
+    Friend WithEvents lbl_manufactor As Label
+    Friend WithEvents lbl_fxt As Label
 End Class
