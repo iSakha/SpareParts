@@ -23,8 +23,8 @@ Partial Class mainForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainForm))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -71,21 +71,24 @@ Partial Class mainForm
         Me.item_malighting = New System.Windows.Forms.ToolStripMenuItem()
         Me.item_ldr = New System.Windows.Forms.ToolStripMenuItem()
         Me.item_showtec = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_all_fxt = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuItem_company = New System.Windows.Forms.ToolStripMenuItem()
-        Me.item_belimlight = New System.Windows.Forms.ToolStripMenuItem()
-        Me.item_PRLighting = New System.Windows.Forms.ToolStripMenuItem()
-        Me.item_blackout = New System.Windows.Forms.ToolStripMenuItem()
-        Me.item_vision = New System.Windows.Forms.ToolStripMenuItem()
-        Me.item_stage = New System.Windows.Forms.ToolStripMenuItem()
-        Me.item_summary = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OthersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_pwr = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_electronics = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_optics = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_plastic = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_mechanics = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_fans = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_others = New System.Windows.Forms.ToolStripMenuItem()
+        Me.item_allSpare = New System.Windows.Forms.ToolStripMenuItem()
         Me.FBD = New System.Windows.Forms.FolderBrowserDialog()
         Me.DGV_fxt = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.DGV_spare = New System.Windows.Forms.DataGridView()
-        Me.item_all_fxt = New System.Windows.Forms.ToolStripMenuItem()
-        Me.lbl_manufactor = New System.Windows.Forms.Label()
+        Me.lbl_qty = New System.Windows.Forms.Label()
+        Me.lbl_sparename = New System.Windows.Forms.Label()
         Me.lbl_fxt = New System.Windows.Forms.Label()
+        Me.lbl_manufactor = New System.Windows.Forms.Label()
+        Me.DGV_spare = New System.Windows.Forms.DataGridView()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DGV_fxt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -395,59 +398,71 @@ Partial Class mainForm
         Me.item_showtec.Size = New System.Drawing.Size(180, 22)
         Me.item_showtec.Text = "&Showtec"
         '
+        'item_all_fxt
+        '
+        Me.item_all_fxt.Name = "item_all_fxt"
+        Me.item_all_fxt.Size = New System.Drawing.Size(180, 22)
+        Me.item_all_fxt.Text = "ALL fixtures"
+        '
         'menuItem_company
         '
-        Me.menuItem_company.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_belimlight, Me.item_PRLighting, Me.item_blackout, Me.item_vision, Me.item_stage, Me.item_summary, Me.OthersToolStripMenuItem})
+        Me.menuItem_company.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_pwr, Me.item_electronics, Me.item_optics, Me.item_plastic, Me.item_mechanics, Me.item_fans, Me.item_others, Me.item_allSpare})
         Me.menuItem_company.Name = "menuItem_company"
         Me.menuItem_company.Size = New System.Drawing.Size(74, 20)
         Me.menuItem_company.Text = "SpareParts"
         '
-        'item_belimlight
+        'item_pwr
         '
-        Me.item_belimlight.Name = "item_belimlight"
-        Me.item_belimlight.Size = New System.Drawing.Size(176, 22)
-        Me.item_belimlight.Text = "&Power,high voltage"
+        Me.item_pwr.Name = "item_pwr"
+        Me.item_pwr.Size = New System.Drawing.Size(180, 22)
+        Me.item_pwr.Text = "&Power,high voltage"
         '
-        'item_PRLighting
+        'item_electronics
         '
-        Me.item_PRLighting.Name = "item_PRLighting"
-        Me.item_PRLighting.Size = New System.Drawing.Size(176, 22)
-        Me.item_PRLighting.Text = "&Electronics"
+        Me.item_electronics.Name = "item_electronics"
+        Me.item_electronics.Size = New System.Drawing.Size(180, 22)
+        Me.item_electronics.Text = "&Electronics"
         '
-        'item_blackout
+        'item_optics
         '
-        Me.item_blackout.Name = "item_blackout"
-        Me.item_blackout.Size = New System.Drawing.Size(176, 22)
-        Me.item_blackout.Text = "&Optics"
+        Me.item_optics.Name = "item_optics"
+        Me.item_optics.Size = New System.Drawing.Size(180, 22)
+        Me.item_optics.Text = "&Optics"
         '
-        'item_vision
+        'item_plastic
         '
-        Me.item_vision.Name = "item_vision"
-        Me.item_vision.Size = New System.Drawing.Size(176, 22)
-        Me.item_vision.Text = "&Plastic"
+        Me.item_plastic.Name = "item_plastic"
+        Me.item_plastic.Size = New System.Drawing.Size(180, 22)
+        Me.item_plastic.Text = "&Plastic"
         '
-        'item_stage
+        'item_mechanics
         '
-        Me.item_stage.Name = "item_stage"
-        Me.item_stage.Size = New System.Drawing.Size(176, 22)
-        Me.item_stage.Text = "&Mechanics"
+        Me.item_mechanics.Name = "item_mechanics"
+        Me.item_mechanics.Size = New System.Drawing.Size(180, 22)
+        Me.item_mechanics.Text = "&Mechanics"
         '
-        'item_summary
+        'item_fans
         '
-        Me.item_summary.Name = "item_summary"
-        Me.item_summary.Size = New System.Drawing.Size(176, 22)
-        Me.item_summary.Text = "&Fans"
+        Me.item_fans.Name = "item_fans"
+        Me.item_fans.Size = New System.Drawing.Size(180, 22)
+        Me.item_fans.Text = "&Fans"
         '
-        'OthersToolStripMenuItem
+        'item_others
         '
-        Me.OthersToolStripMenuItem.Name = "OthersToolStripMenuItem"
-        Me.OthersToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
-        Me.OthersToolStripMenuItem.Text = "&Others"
+        Me.item_others.Name = "item_others"
+        Me.item_others.Size = New System.Drawing.Size(180, 22)
+        Me.item_others.Text = "&Others"
+        '
+        'item_allSpare
+        '
+        Me.item_allSpare.Name = "item_allSpare"
+        Me.item_allSpare.Size = New System.Drawing.Size(180, 22)
+        Me.item_allSpare.Text = "ALL spare parts"
         '
         'DGV_fxt
         '
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.DGV_fxt.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.DGV_fxt.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle15
         Me.DGV_fxt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_fxt.Location = New System.Drawing.Point(3, 51)
         Me.DGV_fxt.Name = "DGV_fxt"
@@ -456,6 +471,8 @@ Partial Class mainForm
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.lbl_qty)
+        Me.Panel1.Controls.Add(Me.lbl_sparename)
         Me.Panel1.Controls.Add(Me.lbl_fxt)
         Me.Panel1.Controls.Add(Me.lbl_manufactor)
         Me.Panel1.Controls.Add(Me.DGV_spare)
@@ -465,21 +482,41 @@ Partial Class mainForm
         Me.Panel1.Size = New System.Drawing.Size(776, 473)
         Me.Panel1.TabIndex = 11
         '
-        'DGV_spare
+        'lbl_qty
         '
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.DGV_spare.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.DGV_spare.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_spare.Location = New System.Drawing.Point(215, 51)
-        Me.DGV_spare.Name = "DGV_spare"
-        Me.DGV_spare.Size = New System.Drawing.Size(558, 402)
-        Me.DGV_spare.TabIndex = 11
+        Me.lbl_qty.AutoSize = True
+        Me.lbl_qty.BackColor = System.Drawing.Color.NavajoWhite
+        Me.lbl_qty.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbl_qty.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lbl_qty.Location = New System.Drawing.Point(637, 14)
+        Me.lbl_qty.Name = "lbl_qty"
+        Me.lbl_qty.Size = New System.Drawing.Size(55, 19)
+        Me.lbl_qty.TabIndex = 15
+        Me.lbl_qty.Text = "Label2"
         '
-        'item_all_fxt
+        'lbl_sparename
         '
-        Me.item_all_fxt.Name = "item_all_fxt"
-        Me.item_all_fxt.Size = New System.Drawing.Size(180, 22)
-        Me.item_all_fxt.Text = "ALL fixtures"
+        Me.lbl_sparename.AutoSize = True
+        Me.lbl_sparename.BackColor = System.Drawing.Color.NavajoWhite
+        Me.lbl_sparename.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbl_sparename.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lbl_sparename.Location = New System.Drawing.Point(342, 14)
+        Me.lbl_sparename.Name = "lbl_sparename"
+        Me.lbl_sparename.Size = New System.Drawing.Size(55, 19)
+        Me.lbl_sparename.TabIndex = 14
+        Me.lbl_sparename.Text = "Label1"
+        '
+        'lbl_fxt
+        '
+        Me.lbl_fxt.AutoSize = True
+        Me.lbl_fxt.BackColor = System.Drawing.Color.NavajoWhite
+        Me.lbl_fxt.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.lbl_fxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lbl_fxt.Location = New System.Drawing.Point(211, 14)
+        Me.lbl_fxt.Name = "lbl_fxt"
+        Me.lbl_fxt.Size = New System.Drawing.Size(55, 19)
+        Me.lbl_fxt.TabIndex = 13
+        Me.lbl_fxt.Text = "Label1"
         '
         'lbl_manufactor
         '
@@ -493,17 +530,15 @@ Partial Class mainForm
         Me.lbl_manufactor.TabIndex = 12
         Me.lbl_manufactor.Text = "Label1"
         '
-        'lbl_fxt
+        'DGV_spare
         '
-        Me.lbl_fxt.AutoSize = True
-        Me.lbl_fxt.BackColor = System.Drawing.Color.NavajoWhite
-        Me.lbl_fxt.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.lbl_fxt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lbl_fxt.Location = New System.Drawing.Point(211, 14)
-        Me.lbl_fxt.Name = "lbl_fxt"
-        Me.lbl_fxt.Size = New System.Drawing.Size(55, 19)
-        Me.lbl_fxt.TabIndex = 13
-        Me.lbl_fxt.Text = "Label1"
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.DGV_spare.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
+        Me.DGV_spare.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_spare.Location = New System.Drawing.Point(215, 51)
+        Me.DGV_spare.Name = "DGV_spare"
+        Me.DGV_spare.Size = New System.Drawing.Size(558, 402)
+        Me.DGV_spare.TabIndex = 11
         '
         'mainForm
         '
@@ -572,13 +607,13 @@ Partial Class mainForm
     Friend WithEvents item_ldr As ToolStripMenuItem
     Friend WithEvents item_showtec As ToolStripMenuItem
     Friend WithEvents menuItem_company As ToolStripMenuItem
-    Friend WithEvents item_belimlight As ToolStripMenuItem
-    Friend WithEvents item_PRLighting As ToolStripMenuItem
-    Friend WithEvents item_blackout As ToolStripMenuItem
-    Friend WithEvents item_vision As ToolStripMenuItem
-    Friend WithEvents item_stage As ToolStripMenuItem
-    Friend WithEvents item_summary As ToolStripMenuItem
-    Friend WithEvents OthersToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents item_pwr As ToolStripMenuItem
+    Friend WithEvents item_electronics As ToolStripMenuItem
+    Friend WithEvents item_optics As ToolStripMenuItem
+    Friend WithEvents item_plastic As ToolStripMenuItem
+    Friend WithEvents item_mechanics As ToolStripMenuItem
+    Friend WithEvents item_fans As ToolStripMenuItem
+    Friend WithEvents item_others As ToolStripMenuItem
     Friend WithEvents FBD As FolderBrowserDialog
     Friend WithEvents DGV_fxt As DataGridView
     Friend WithEvents Panel1 As Panel
@@ -586,4 +621,7 @@ Partial Class mainForm
     Friend WithEvents item_all_fxt As ToolStripMenuItem
     Friend WithEvents lbl_manufactor As Label
     Friend WithEvents lbl_fxt As Label
+    Friend WithEvents lbl_qty As Label
+    Friend WithEvents lbl_sparename As Label
+    Friend WithEvents item_allSpare As ToolStripMenuItem
 End Class

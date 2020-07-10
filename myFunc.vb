@@ -55,7 +55,7 @@ Module myFunc
         mainForm.dt_Manufactors = loadDatatables("Fixtures", "Manufactors")
         mainForm.dt_Personnel = loadDatatables("Fixtures", "Personnel")
 
-        mainForm.DGV_spare.DataSource = mainForm.dt_SpareParts
+        'mainForm.DGV_spare.DataSource = mainForm.dt_SpareParts
     End Sub
 
     '===================================================================================
@@ -160,7 +160,7 @@ Module myFunc
     End Function
 
     '===================================================================================
-    '             === Fill datagridview ===
+    '             === Fill Spare datagridview ===
     '===================================================================================
 
     Function fillDGV(_expression As String, _dt As DataTable, _columnName As String)
@@ -186,17 +186,12 @@ Module myFunc
     '===================================================================================
     '             === Format DGV_fxt ===
     '===================================================================================
-    Sub formatDGV_fxt(_case As Integer)
+    Sub formatDGV_fxt()
         mainForm.DGV_fxt.Columns(2).Visible = False
         mainForm.DGV_fxt.Columns(3).Visible = False
         mainForm.DGV_fxt.Columns(0).Width = 40
         mainForm.DGV_fxt.RowHeadersVisible = False
-        Select Case _case
-            Case = 1
-                mainForm.DGV_fxt.Columns(1).Width = 130
-            Case = 2
-                mainForm.DGV_fxt.Columns(1).Width = 147
-        End Select
+        mainForm.DGV_fxt.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
     End Sub
 
     '===================================================================================
@@ -208,12 +203,69 @@ Module myFunc
     End Sub
 
     '===================================================================================
-    '             === CellClick on DGV ===
+    '             === CellClick on DGV_fxt ===
     '===================================================================================
-    Sub dgv_clickCell(_sender As Object, _e As DataGridViewCellEventArgs)
+    Sub dgv_clickCell_fxt(_sender As Object, _e As DataGridViewCellEventArgs)
         Dim index As Integer
         index = _e.RowIndex
         mainForm.lbl_fxt.Text = mainForm.DGV_fxt.Rows(index).Cells(1).Value
+        mainForm.DGV_spare.DataSource = mainForm.dt_SpareParts
     End Sub
+    '===================================================================================
+    '             === Format DGV_spare ===
+    '===================================================================================
+    Sub formatDGV_spare(_case As Integer)
+        mainForm.DGV_spare.RowHeadersVisible = False
+        mainForm.DGV_spare.Columns(0).Width = 40                    ' id_spare
+        mainForm.DGV_spare.Columns(1).Width = 100                   ' Type
+        mainForm.DGV_spare.Columns(2).Width = 190                   ' Name
+        mainForm.DGV_spare.Columns(3).Visible = False               ' PartName
+        mainForm.DGV_spare.Columns(4).Visible = False               ' PartNumber
+        Select Case _case
+            Case 1
+                mainForm.DGV_spare.Columns(5).Visible = False               ' Fixture
+            Case 2
+                mainForm.DGV_spare.Columns(5).Visible = True
+                mainForm.DGV_spare.Columns(5).Width = 100
+        End Select
+
+        mainForm.DGV_spare.Columns(6).Visible = False               ' Manufactor
+        mainForm.DGV_spare.Columns(7).Visible = False               ' FixtureType
+        mainForm.DGV_spare.Columns(8).Visible = False               ' MultiFixture
+        mainForm.DGV_spare.Columns(9).Width = 40                    ' Qty
+        mainForm.DGV_spare.Columns(10).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill           ' Notes
+    End Sub
+
+    '===================================================================================
+    '             === CellClick on DGV_fxt ===
+    '===================================================================================
+    Sub dgv_clickCell_spare(_sender As Object, _e As DataGridViewCellEventArgs)
+        Dim index As Integer
+        index = _e.RowIndex
+        mainForm.lbl_sparename.Text = mainForm.DGV_spare.Rows(index).Cells(2).Value
+        mainForm.lbl_qty.Text = "В наличии:  " & mainForm.DGV_spare.Rows(index).Cells(9).Value
+    End Sub
+    '===================================================================================
+    '             === Filter DGV_spare by type ===
+    '===================================================================================
+    Sub filtermainForm(_type As String)
+        Dim filterTable As DataTable
+        Dim foundRows() As DataRow
+        Dim expression As String
+
+        expression = "Type = " & "'" & _type & "'"
+
+        filterTable = mainForm.dt_SpareParts.Copy
+        filterTable.Clear()
+
+        foundRows = mainForm.dt_SpareParts.Select(expression)
+
+        For i As Integer = 0 To foundRows.GetUpperBound(0)
+            filterTable.ImportRow(foundRows(i))
+        Next i
+
+        mainForm.DGV_spare.DataSource = filterTable
+    End Sub
+
 
 End Module
