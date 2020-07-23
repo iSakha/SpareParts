@@ -23,8 +23,8 @@ Partial Class mainForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(mainForm))
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -89,6 +89,7 @@ Partial Class mainForm
         Me.lbl_fxt = New System.Windows.Forms.Label()
         Me.lbl_manufactor = New System.Windows.Forms.Label()
         Me.DGV_spare = New System.Windows.Forms.DataGridView()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DGV_fxt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -190,20 +191,20 @@ Partial Class mainForm
         '
         Me.UndoToolStripMenuItem.Name = "UndoToolStripMenuItem"
         Me.UndoToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Z), System.Windows.Forms.Keys)
-        Me.UndoToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.UndoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.UndoToolStripMenuItem.Text = "&Undo"
         '
         'RedoToolStripMenuItem
         '
         Me.RedoToolStripMenuItem.Name = "RedoToolStripMenuItem"
         Me.RedoToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Y), System.Windows.Forms.Keys)
-        Me.RedoToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.RedoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RedoToolStripMenuItem.Text = "&Redo"
         '
         'toolStripSeparator3
         '
         Me.toolStripSeparator3.Name = "toolStripSeparator3"
-        Me.toolStripSeparator3.Size = New System.Drawing.Size(141, 6)
+        Me.toolStripSeparator3.Size = New System.Drawing.Size(177, 6)
         '
         'CutToolStripMenuItem
         '
@@ -211,7 +212,7 @@ Partial Class mainForm
         Me.CutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.CutToolStripMenuItem.Name = "CutToolStripMenuItem"
         Me.CutToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.CutToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.CutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CutToolStripMenuItem.Text = "Cu&t"
         '
         'CopyToolStripMenuItem
@@ -220,7 +221,7 @@ Partial Class mainForm
         Me.CopyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem"
         Me.CopyToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CopyToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.CopyToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CopyToolStripMenuItem.Text = "&Copy"
         '
         'PasteToolStripMenuItem
@@ -229,25 +230,25 @@ Partial Class mainForm
         Me.PasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.PasteToolStripMenuItem.Name = "PasteToolStripMenuItem"
         Me.PasteToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.PasteToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.PasteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PasteToolStripMenuItem.Text = "&Paste"
         '
         'toolStripSeparator4
         '
         Me.toolStripSeparator4.Name = "toolStripSeparator4"
-        Me.toolStripSeparator4.Size = New System.Drawing.Size(141, 6)
+        Me.toolStripSeparator4.Size = New System.Drawing.Size(177, 6)
         '
         'SelectAllToolStripMenuItem
         '
         Me.SelectAllToolStripMenuItem.Name = "SelectAllToolStripMenuItem"
-        Me.SelectAllToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.SelectAllToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SelectAllToolStripMenuItem.Text = "Select &All"
         '
         'ToolsToolStripMenuItem
         '
         Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomizeToolStripMenuItem, Me.OptionsToolStripMenuItem})
         Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
+        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
         Me.ToolsToolStripMenuItem.Text = "&Tools"
         '
         'CustomizeToolStripMenuItem
@@ -309,7 +310,7 @@ Partial Class mainForm
         '
         Me.item_claypaky.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_lamp_cp, Me.item_led_cp})
         Me.item_claypaky.Name = "item_claypaky"
-        Me.item_claypaky.Size = New System.Drawing.Size(180, 22)
+        Me.item_claypaky.Size = New System.Drawing.Size(137, 22)
         Me.item_claypaky.Text = "&ClayPaky"
         '
         'item_lamp_cp
@@ -328,7 +329,7 @@ Partial Class mainForm
         '
         Me.item_pr.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_lamp_pr, Me.item_led_pr})
         Me.item_pr.Name = "item_pr"
-        Me.item_pr.Size = New System.Drawing.Size(180, 22)
+        Me.item_pr.Size = New System.Drawing.Size(137, 22)
         Me.item_pr.Text = "&PR Lighting"
         '
         'item_lamp_pr
@@ -347,7 +348,7 @@ Partial Class mainForm
         '
         Me.item_lightsky.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.item_lamp_ls, Me.item_led_ls})
         Me.item_lightsky.Name = "item_lightsky"
-        Me.item_lightsky.Size = New System.Drawing.Size(180, 22)
+        Me.item_lightsky.Size = New System.Drawing.Size(137, 22)
         Me.item_lightsky.Text = "&LightSky"
         '
         'item_lamp_ls
@@ -365,43 +366,43 @@ Partial Class mainForm
         'item_martin
         '
         Me.item_martin.Name = "item_martin"
-        Me.item_martin.Size = New System.Drawing.Size(180, 22)
+        Me.item_martin.Size = New System.Drawing.Size(137, 22)
         Me.item_martin.Text = "&Martin"
         '
         'item_studiodue
         '
         Me.item_studiodue.Name = "item_studiodue"
-        Me.item_studiodue.Size = New System.Drawing.Size(180, 22)
+        Me.item_studiodue.Size = New System.Drawing.Size(137, 22)
         Me.item_studiodue.Text = "&StudioDue"
         '
         'item_antari
         '
         Me.item_antari.Name = "item_antari"
-        Me.item_antari.Size = New System.Drawing.Size(180, 22)
+        Me.item_antari.Size = New System.Drawing.Size(137, 22)
         Me.item_antari.Text = "&Antari"
         '
         'item_malighting
         '
         Me.item_malighting.Name = "item_malighting"
-        Me.item_malighting.Size = New System.Drawing.Size(180, 22)
+        Me.item_malighting.Size = New System.Drawing.Size(137, 22)
         Me.item_malighting.Text = "&MALighting"
         '
         'item_ldr
         '
         Me.item_ldr.Name = "item_ldr"
-        Me.item_ldr.Size = New System.Drawing.Size(180, 22)
+        Me.item_ldr.Size = New System.Drawing.Size(137, 22)
         Me.item_ldr.Text = "&LDR"
         '
         'item_showtec
         '
         Me.item_showtec.Name = "item_showtec"
-        Me.item_showtec.Size = New System.Drawing.Size(180, 22)
+        Me.item_showtec.Size = New System.Drawing.Size(137, 22)
         Me.item_showtec.Text = "&Showtec"
         '
         'item_all_fxt
         '
         Me.item_all_fxt.Name = "item_all_fxt"
-        Me.item_all_fxt.Size = New System.Drawing.Size(180, 22)
+        Me.item_all_fxt.Size = New System.Drawing.Size(137, 22)
         Me.item_all_fxt.Text = "ALL fixtures"
         '
         'menuItem_company
@@ -414,55 +415,55 @@ Partial Class mainForm
         'item_pwr
         '
         Me.item_pwr.Name = "item_pwr"
-        Me.item_pwr.Size = New System.Drawing.Size(180, 22)
+        Me.item_pwr.Size = New System.Drawing.Size(176, 22)
         Me.item_pwr.Text = "&Power,high voltage"
         '
         'item_electronics
         '
         Me.item_electronics.Name = "item_electronics"
-        Me.item_electronics.Size = New System.Drawing.Size(180, 22)
+        Me.item_electronics.Size = New System.Drawing.Size(176, 22)
         Me.item_electronics.Text = "&Electronics"
         '
         'item_optics
         '
         Me.item_optics.Name = "item_optics"
-        Me.item_optics.Size = New System.Drawing.Size(180, 22)
+        Me.item_optics.Size = New System.Drawing.Size(176, 22)
         Me.item_optics.Text = "&Optics"
         '
         'item_plastic
         '
         Me.item_plastic.Name = "item_plastic"
-        Me.item_plastic.Size = New System.Drawing.Size(180, 22)
+        Me.item_plastic.Size = New System.Drawing.Size(176, 22)
         Me.item_plastic.Text = "&Plastic"
         '
         'item_mechanics
         '
         Me.item_mechanics.Name = "item_mechanics"
-        Me.item_mechanics.Size = New System.Drawing.Size(180, 22)
+        Me.item_mechanics.Size = New System.Drawing.Size(176, 22)
         Me.item_mechanics.Text = "&Mechanics"
         '
         'item_fans
         '
         Me.item_fans.Name = "item_fans"
-        Me.item_fans.Size = New System.Drawing.Size(180, 22)
+        Me.item_fans.Size = New System.Drawing.Size(176, 22)
         Me.item_fans.Text = "&Fans"
         '
         'item_others
         '
         Me.item_others.Name = "item_others"
-        Me.item_others.Size = New System.Drawing.Size(180, 22)
+        Me.item_others.Size = New System.Drawing.Size(176, 22)
         Me.item_others.Text = "&Others"
         '
         'item_allSpare
         '
         Me.item_allSpare.Name = "item_allSpare"
-        Me.item_allSpare.Size = New System.Drawing.Size(180, 22)
+        Me.item_allSpare.Size = New System.Drawing.Size(176, 22)
         Me.item_allSpare.Text = "ALL spare parts"
         '
         'DGV_fxt
         '
-        DataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.DGV_fxt.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.DGV_fxt.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DGV_fxt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_fxt.Location = New System.Drawing.Point(3, 51)
         Me.DGV_fxt.Name = "DGV_fxt"
@@ -532,19 +533,29 @@ Partial Class mainForm
         '
         'DGV_spare
         '
-        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.DGV_spare.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.DGV_spare.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DGV_spare.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_spare.Location = New System.Drawing.Point(215, 51)
         Me.DGV_spare.Name = "DGV_spare"
         Me.DGV_spare.Size = New System.Drawing.Size(558, 402)
         Me.DGV_spare.TabIndex = 11
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(94, 535)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 12
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'mainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 586)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Name = "mainForm"
@@ -624,4 +635,5 @@ Partial Class mainForm
     Friend WithEvents lbl_qty As Label
     Friend WithEvents lbl_sparename As Label
     Friend WithEvents item_allSpare As ToolStripMenuItem
+    Friend WithEvents Button1 As Button
 End Class

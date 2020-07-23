@@ -187,4 +187,11 @@ Public Class mainForm
     End Sub
 
 
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        spareForm.Show()
+        spareForm.DGV_in.DataSource = dt_Action
+        formatDGV_IN_OUT(spareForm.DGV_in)
+    End Sub
+
 End Class

@@ -210,6 +210,8 @@ Module myFunc
         index = _e.RowIndex
         mainForm.lbl_fxt.Text = mainForm.DGV_fxt.Rows(index).Cells(1).Value
         mainForm.DGV_spare.DataSource = mainForm.dt_SpareParts
+
+        mainForm.DGV_fxt.Rows(index).Selected = True
     End Sub
     '===================================================================================
     '             === Format DGV_spare ===
@@ -244,6 +246,10 @@ Module myFunc
         index = _e.RowIndex
         mainForm.lbl_sparename.Text = mainForm.DGV_spare.Rows(index).Cells(2).Value
         mainForm.lbl_qty.Text = "В наличии:  " & mainForm.DGV_spare.Rows(index).Cells(9).Value
+        mainForm.lbl_fxt.Text = mainForm.DGV_spare.Rows(index).Cells(5).Value
+
+        mainForm.DGV_spare.Rows(index).Selected = True
+
     End Sub
     '===================================================================================
     '             === Filter DGV_spare by type ===
@@ -265,6 +271,30 @@ Module myFunc
         Next i
 
         mainForm.DGV_spare.DataSource = filterTable
+    End Sub
+
+    '===================================================================================
+    '             === Format DGV_IN/OUT ===
+    '===================================================================================
+    Sub formatDGV_IN_OUT(_dgv As DataGridView)
+
+        _dgv.RowHeadersVisible = False
+
+        _dgv.Columns(0).Width = 40                  ' id_action
+        _dgv.Columns(1).Width = 70                  ' Date
+        _dgv.Columns(2).Width = 40                  ' Action
+        _dgv.Columns(3).Width = 90                  ' Spare Type
+        _dgv.Columns(4).Width = 160                 ' Spare Name
+        _dgv.Columns(5).Width = 130                 ' PartName
+        _dgv.Columns(6).Width = 90                  ' PartNumber
+        _dgv.Columns(7).Width = 110                 ' Fixture
+        _dgv.Columns(8).Width = 90                  ' Manufactor
+        _dgv.Columns(9).Width = 40                  ' Qty
+        _dgv.Columns(10).Width = 40                 ' MultiFixture  
+        _dgv.Columns(11).Width = 180                ' Notes
+
+        _dgv.Columns(12).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill         ' Pers
+
     End Sub
 
 
